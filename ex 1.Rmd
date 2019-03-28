@@ -19,6 +19,7 @@ It is well-known climate influences people [@Young_2018]....
 
 ```{r}
 datos <- read.table("data.txt", header = TRUE)
+datos <- [-c(12,36),]
 
 ```
 
