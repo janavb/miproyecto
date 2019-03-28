@@ -1,0 +1,72 @@
+---
+title: 'Exemple1: es bueno el solecito para la felicidad?'
+author: "Jana VB"
+date: "28 de marzo de 2019"
+output:
+  word_document: default
+bibliography: references.bib
+csl: ecology-letters.csl
+---
+```{r include=FALSE}
+setwd("~/R.files.jana/R_course_UdG/cursoR-AEET-2019-master/reprosci")
+```
+
+##INTRODUCTION
+
+It is well-known climate influences people [@Young_2018]....
+
+##METHODS
+
+```{r}
+datos <- read.table("data.txt", header = TRUE)
+
+```
+
+```{r}
+modelo <- lm(happiness ~ sunshine, data=datos)
+```
+
+We interviewed `r nrow (datos)` people and fitted a linear model.
+
+##afefir formules: afegim dos dolars
+$$
+
+$$
+
+##RESULTS
+
+We found than happiness is positively related to sunshine hours (`r coef(modelo)[2]`)
+
+```{r}
+library (visreg)
+visreg (modelo)
+```
+
+```{r}
+library(knitr)
+library(xtable)
+kable(xtable(modelo))#generar una tabla rmarkdown
+```
+
+
+##DISCUSSION
+
+Sunshine is good for happiness 
+
+## REFERENCES
+
+## explicació 
+
+
+amb tots els comandos inicials li vas dient el tipus d'arxiu, d'on treu la biblio, si et baixes un nou format de biblio etc
+
+title: 'Exemple1: es bueno el solecito para la felicidad?'
+author: "Jana VB"
+date: "28 de marzo de 2019"
+output:
+  word_document: default
+bibliography: references.bib -> li defineixes d'on ha de treure les ref
+csl: ecology-letters.csl -> li defineixes l'estil, l'has de baixar de zotero style repository, i li has de definir el nom de l'arxiu que t'has baixat. 
+
+
+Una altra opció per la biblio, i vols buscar un paper per citar-lo ho pots fer des de Rcrossreff en addins
